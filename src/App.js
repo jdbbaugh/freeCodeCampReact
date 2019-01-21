@@ -111,16 +111,28 @@ import React, { Component } from 'react'
 export default class App extends Component {
   constructor() {
     super()
-    this.state = {}
+    this.state = {
+      loading: false,
+      character: {}
+    }
   }
 
   componentDidMount() {
-    // TODO: AT 3:28 IN https://www.youtube.com/watch?v=DLX62G4lc44
+    this.setState({loading: true})
+    fetch("https://swapi.co/api/people/1")
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+        character: data,
+        loading: false
+      })
+    })
   }
   render() {
+    const text = this.state.loading ? "loading...." : this.state.character.name
     return(
       <div>
-        Code goes heres
+        {text}
       </div>
     )
   }
