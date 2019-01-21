@@ -126,6 +126,7 @@ export default class App extends Component {
     return(
       <form>
         <input type="text" name="firstName" placeholder="First Name" onChange={this.handleChange} />
+        <br/>
         <input type="text" name="lastName" placeholder="Last Name" onChange={this.handleChange} />
         <h1>{this.state.firstName} {this.state.lastName}</h1>
       </form>
