@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 // import Conditional from './Conditional'
-import todoList from './todoList'
-import Todoitem from './Todoitem'
-import './index.css'
+// import todoList from './todoList'
+// import Todoitem from './Todoitem'
+// import './index.css'
 
 // export default class App extends Component {
 //   constructor() {
@@ -36,40 +36,40 @@ import './index.css'
 
 
 // TODO: THIS IS MAIN TODOLIST APP
-export default class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      todos: todoList
-    }
-    this.handleChange = this.handleChange.bind(this)
-  }
+// export default class App extends Component {
+//   constructor() {
+//     super()
+//     this.state = {
+//       todos: todoList
+//     }
+//     this.handleChange = this.handleChange.bind(this)
+//   }
 
-  handleChange(id) {
-    this.setState(prevState => {
-      const updatedTodos = prevState.todos.map(oldState => {
-        if (oldState.id === id) {
-          oldState.completed = !oldState.completed
-        }
-        return oldState
-      })
-      return {
-        todos: updatedTodos
-      }
-    })
-    // console.log("clicked man", id)
-  }
-  render() {
-    const todoItems = this.state.todos.map(todoItm =>
-      <Todoitem key={todoItm.id} item={todoItm} handleChange={this.handleChange}/>
-    )
-    return (
-      <div className="meContainer">
-        {todoItems}
-      </div>
-    )
-  }
-}
+//   handleChange(id) {
+//     this.setState(prevState => {
+//       const updatedTodos = prevState.todos.map(oldState => {
+//         if (oldState.id === id) {
+//           oldState.completed = !oldState.completed
+//         }
+//         return oldState
+//       })
+//       return {
+//         todos: updatedTodos
+//       }
+//     })
+//     // console.log("clicked man", id)
+//   }
+//   render() {
+//     const todoItems = this.state.todos.map(todoItm =>
+//       <Todoitem key={todoItm.id} item={todoItm} handleChange={this.handleChange}/>
+//     )
+//     return (
+//       <div className="meContainer">
+//         {todoItems}
+//       </div>
+//     )
+//   }
+// }
 
 // export default class App extends Component {
 //   constructor() {
@@ -107,3 +107,21 @@ export default class App extends Component {
 //     )
 //   }
 // }
+
+export default class App extends Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
+
+  componentDidMount() {
+    // TODO: AT 3:28 IN https://www.youtube.com/watch?v=DLX62G4lc44
+  }
+  render() {
+    return(
+      <div>
+        Code goes heres
+      </div>
+    )
+  }
+}
